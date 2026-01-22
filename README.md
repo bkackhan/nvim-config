@@ -29,7 +29,7 @@ sudo apt-get install **ripgrep**: for the greap text search (, + t + g)
 **vim-plug:** for install required plugins
 **latest Nvim:** of course
 ## Start
-1.- put init.vim file in route **/home/<YourUser>/.config/nvim/init.vim**
+1.- put init.vim file in route **/home/YourUser/.config/nvim/init.vim**
 2.- Open nvim and run **:PlugInstall**
 3.- enjoy
 
