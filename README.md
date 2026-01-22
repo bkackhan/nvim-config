@@ -20,16 +20,22 @@ nvim config for develop vuejs + typescrip (but you can add any lsp)
 ## autocomplete
 
 use **Enter** to acept the COC suggestion
+
 user **Tab** or **Shift + Tab** to navigate trow COC suggestions 
 
 
 ## Dependencies
 
 sudo apt-get install **ripgrep**: for the greap text search (, + t + g)
+
 **vim-plug:** for install required plugins
+
 **latest Nvim:** of course
+
 ## Start
 1.- put init.vim file in route **/home/YourUser/.config/nvim/init.vim**
+
 2.- Open nvim and run **:PlugInstall**
+
 3.- enjoy
 
