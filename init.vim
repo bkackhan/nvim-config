@@ -1,3 +1,8 @@
+" para la identacion correcta
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 " - para mostrar los numeros
 :set number
 " - las busquedas son no key sensitive
@@ -21,6 +26,8 @@ call plug#begin('/home/cleanhead/.config/nvim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	" Or build from source code by using npm
 	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
+  " para cerrar los pares de { [ (
+  Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 " Configuración del tema
@@ -60,18 +67,18 @@ require("mason-lspconfig").setup({
 })
 require("mason").setup({})
 require("mason-lspconfig").setup({
-ensure_installed = {
-"dockerls",
-"html",
-"jsonls",
-"lua_ls",
-"vimls",
-"vue_ls",
-"vtsls",
-"cssls",
-"cssmodules_ls"
-},
-automatic_installation = true,
+  ensure_installed = {
+    "dockerls",
+    "html",
+    "jsonls",
+    "lua_ls",
+    "vimls",
+    "vue_ls",
+    "vtsls",
+    "cssls",
+    "cssmodules_ls"
+  },
+  automatic_installation = true,
 })
 
 local vue_language_server_path = vim.fn.stdpath("data")
@@ -106,4 +113,7 @@ vim.lsp.config("vtsls", {
 
 
 vim.lsp.enable("vtsls, vue_ls, cssls, html")
+
+-- auto pairs para el cerrado automatico de de los { [ (
+require("nvim-autopairs").setup({})
 EOF
