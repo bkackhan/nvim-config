@@ -17,7 +17,7 @@ nvim config for develop vuejs + typescrip (but you can add any lsp)
 " quita el molesto higligh despues de una busqueda
 **, + n + h** = turn off the highlight after a search
 
-## autocomplite
+## autocomplete
 
 use **Enter** to acept the COC suggestion
 user **Tab** or **Shift + Tab** to navigate trow COC suggestions 
