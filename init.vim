@@ -8,7 +8,7 @@ set expandtab
 " - las busquedas son no key sensitive
 :set ignorecase
 " - pluggins
-call plug#begin('/home/cleanhead/.config/nvim/plugged')
+call plug#begin('./plugged')
 	" arbol de archivos e iconos
 	" Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'
