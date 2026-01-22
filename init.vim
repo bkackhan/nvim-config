@@ -12,7 +12,7 @@ call plug#begin('/home/cleanhead/.config/nvim/plugged')
 	" arbol de archivos e iconos
 	" Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'
-  	Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-tree.lua'
 	" finder
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-lua/plenary.nvim'
@@ -115,10 +115,6 @@ vim.lsp.config("vtsls", {
 
 vim.lsp.enable("vtsls, vue_ls, cssls, html")
 
--- auto pairs para el cerrado automatico de de los { [ (
-require("nvim-autopairs").setup({})
--- NvimTree
-require("nvim-tree").setup()
 -- cambiamos unos cuantos iconos
 require('nvim-web-devicons').setup({
    override = {
@@ -129,5 +125,9 @@ require('nvim-web-devicons').setup({
      ["dto.ts"] = {icon="", color="#653535", name="nest_dto"},
    }
 })
+-- auto pairs para el cerrado automatico de de los { [ (
+require("nvim-autopairs").setup({})
+-- NvimTree
+require("nvim-tree").setup()
 
 EOF
