@@ -26,7 +26,7 @@ user **Tab** or **Shift + Tab** to navigate trow COC suggestions
 
 ## Dependencies
 
-sudo apt-get install **ripgrep**: for the greap text search (, + t + g)
+sudo apt-get install **ripgrep**: for the greap text search (, + f + g)
 
 **vim-plug:** for install required plugins
 
