@@ -9,9 +9,10 @@ set expandtab
 :set ignorecase
 " - pluggins
 call plug#begin('/home/cleanhead/.config/nvim/plugged')
-	" arbol de archivos
-	Plug 'preservim/nerdtree'
+	" arbol de archivos e iconos
+	" Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'
+  	Plug 'nvim-tree/nvim-tree.lua'
 	" finder
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-lua/plenary.nvim'
@@ -34,7 +35,7 @@ call plug#end()
 colorscheme nightfox
 "  - keybandings
 " abre el arbol de archivos a la izquierda
-nnoremap ,ot :NERDTreeToggle<CR>
+nnoremap ,ot :NvimTreeToggle<CR>
 " cambia entre el arbol y el editor
 nnoremap <C-e> :wincmd w<CR>
 " busca todos los archivos por nombre
@@ -116,4 +117,17 @@ vim.lsp.enable("vtsls, vue_ls, cssls, html")
 
 -- auto pairs para el cerrado automatico de de los { [ (
 require("nvim-autopairs").setup({})
+-- NvimTree
+require("nvim-tree").setup()
+-- cambiamos unos cuantos iconos
+require('nvim-web-devicons').setup({
+   override = {
+     vue = {icon="󰡄", color="#2bfb79", name="vue"},
+     ["service.ts"] = {icon="", color="#fbe12b", name="nest_service"},
+     ["controller.ts"] = {icon="", color="#2b77fb", name="nest_controller"},
+     ["module.ts"] = {icon="", color="#dc1625", name="nest_module"},
+     ["dto.ts"] = {icon="", color="#653535", name="nest_dto"},
+   }
+})
+
 EOF
