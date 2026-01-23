@@ -9,21 +9,7 @@ set number
 " - las busquedas son no key sensitive
 set ignorecase
 " ***************** clipboard ***********************
-set clipboard=unnamedplus
-
-if executable('xclip')
-    let g:clipboard = {
-        \ 'name': 'xclip',
-        \ 'copy': {
-        \    '+': 'xclip -quiet -i -selection clipboard',
-        \    '*': 'xclip -quiet -i -selection primary',
-        \ },
-        \ 'paste': {
-        \    '+': 'xclip -o -selection clipboard',
-        \    '*': 'xclip -o -selection primary',
-        \ },
-        \ }
-endif
+set clipboard+=unnamedplus
 " ***************** pluggins ***********************
 call plug#begin('/home/cleanhead/.config/nvim/plugged')
 	" arbol de archivos e iconos
@@ -187,6 +173,8 @@ vim.lsp.config("vtsls", {
 })
 
 
-vim.lsp.enable("vtsls", "vue_ls", "cssls", "html")
+vim.lsp.enable(
+  "ccsls","vtsls", "vue_ls", "cssls", "html", "dockerls", "jsonls"
+)
 
 EOF
