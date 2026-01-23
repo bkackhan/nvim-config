@@ -15,14 +15,17 @@ call plug#begin('/home/cleanhead/.config/nvim/plugged')
 	" arbol de archivos e iconos
 	Plug 'ryanoasis/vim-devicons'
   Plug 'nvim-tree/nvim-tree.lua'
+
 	" finder
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-tree/nvim-web-devicons'
+
 	" LSP 
 	Plug 'neovim/nvim-lspconfig',
 	Plug 'williamboman/mason.nvim'
 	Plug 'williamboman/mason-lspconfig.nvim'
+
   "autocompletado
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
@@ -30,6 +33,7 @@ call plug#begin('/home/cleanhead/.config/nvim/plugged')
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
+
   " For vsnip users autocompletado.
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
@@ -40,6 +44,8 @@ call plug#begin('/home/cleanhead/.config/nvim/plugged')
   Plug 'windwp/nvim-autopairs'
   " para transparencia
   Plug 'tribela/vim-transparent'
+  " para ver las identaciones
+  Plug 'lukas-reineke/indent-blankline.nvim'
 
 
 call plug#end()
@@ -87,7 +93,7 @@ require("mason-lspconfig").setup({
 })
 
 
--- ************* icon update for nest *****************
+-- ************* Multi confings *****************
 require('nvim-web-devicons').setup({
    override = {
      --vue = {icon="󰡄", color="#2bfb79", name="vue"},
@@ -101,6 +107,8 @@ require('nvim-web-devicons').setup({
 require("nvim-autopairs").setup({map_cr = false})
 -- NvimTree
 require("nvim-tree").setup()
+-- identation
+require("ibl").setup()
 -- ***************** vim-cmp config *******************
 local cmp = require'cmp'
 cmp.setup({
