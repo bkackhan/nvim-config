@@ -34,14 +34,15 @@ call plug#begin('/home/cleanhead/.config/nvim/plugged')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
-	" nightfox night para tema
-	Plug 'EdenEast/nightfox.nvim' " Vim-Plug
+	" cyberdream para tema
+  Plug 'scottmckendry/cyberdream.nvim'
   " para cerrar los pares de { [ (
   Plug 'windwp/nvim-autopairs'
+  " para transparencia
+  Plug 'tribela/vim-transparent'
+
 
 call plug#end()
-" Configuración del tema
-colorscheme nightfox
 "  - keybandings
 " abre el arbol de archivos a la izquierda
 nnoremap ,ot :NvimTreeToggle<CR>
@@ -59,6 +60,8 @@ nnoremap ,fr :%s///gc<left><left><left><left>
 " quita el molesto higligh despues de una busqueda
 nnoremap ,nh :noh<CR>
 " ************ LUA CONFIG **************
+" Configuración del tema
+colorscheme cyberdream
 lua << EOF
 -- ************ mason config **************
 vim.lsp.completion.enable()
