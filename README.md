@@ -35,7 +35,9 @@ sudo apt-get install **ripgrep**: for the greap text search (, + f + g)
 ## Start
 1.- put init.vim file in route **/home/YourUser/.config/nvim/init.vim**
 
-2.- Open nvim and run **:PlugInstall**
+2.- remember to change "cleanhead" to youruser in plug path
+
+3.- Open nvim and run **:PlugInstall**
 
 3.- enjoy
 
