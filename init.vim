@@ -22,12 +22,11 @@ call plug#begin('/home/cleanhead/.config/nvim/plugged')
 	Plug 'nvim-tree/nvim-web-devicons'
 
 	" LSP 
-	Plug 'neovim/nvim-lspconfig',
+	Plug 'neovim/nvim-lspconfig'
 	Plug 'williamboman/mason.nvim'
 	Plug 'williamboman/mason-lspconfig.nvim'
 
   "autocompletado
-  Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
@@ -70,13 +69,11 @@ nnoremap ,nh :noh<CR>
 colorscheme cyberdream
 lua << EOF
 -- ************ mason config **************
-vim.lsp.completion.enable()
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed={ "vtsls", "vue_ls"},
 	automatic_installation = true
 })
-require("mason").setup({})
 require("mason-lspconfig").setup({
   ensure_installed = {
     "dockerls",
@@ -87,7 +84,7 @@ require("mason-lspconfig").setup({
     "vue_ls",
     "vtsls",
     "cssls",
-    "cssmodules_ls"
+    "cssmodules_ls",
   },
   automatic_installation = true,
 })
@@ -96,11 +93,12 @@ require("mason-lspconfig").setup({
 -- ************* Multi confings *****************
 require('nvim-web-devicons').setup({
    override = {
-     --vue = {icon="󰡄", color="#2bfb79", name="vue"},
      ["service.ts"] = {icon="", color="#fbe12b", name="nest_service"},
      ["controller.ts"] = {icon="", color="#2b77fb", name="nest_controller"},
      ["module.ts"] = {icon="", color="#dc1625", name="nest_module"},
      ["dto.ts"] = {icon="", color="#653535", name="nest_dto"},
+     ["guard.ts"] = {icon="", color="#79fb2b", name="guard_ts"},
+     ["decorator.ts"] = {icon="", color="#bd2bfb", name="nest_decorator"},
    }
 })
 -- auto pairs para el cerrado automatico de de los { [ (
@@ -185,7 +183,7 @@ vim.lsp.config("vtsls", {
 
 
 vim.lsp.enable(
-  "ccsls","vtsls", "vue_ls", "cssls", "html", "dockerls", "jsonls"
+  "vtsls", "vue_ls", "cssls", "html", "dockerls", "jsonls"
 )
 
 EOF
