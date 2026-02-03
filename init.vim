@@ -71,10 +71,6 @@ lua << EOF
 -- ************ mason config **************
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed={ "vtsls", "vue_ls"},
-	automatic_installation = true
-})
-require("mason-lspconfig").setup({
   ensure_installed = {
     "dockerls",
     "html",
@@ -84,6 +80,7 @@ require("mason-lspconfig").setup({
     "vue_ls",
     "vtsls",
     "cssls",
+    "prismals",
     "cssmodules_ls",
   },
   automatic_installation = true,
@@ -183,7 +180,7 @@ vim.lsp.config("vtsls", {
 
 
 vim.lsp.enable(
-  "vtsls", "vue_ls", "cssls", "html", "dockerls", "jsonls"
+  "vtsls", "vue_ls", "cssls", "html", "dockerls", "jsonls","prismals"
 )
 
 EOF
